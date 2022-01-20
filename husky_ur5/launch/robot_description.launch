@@ -6,7 +6,7 @@
   <arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
   <arg name="kinematics_config" default="$(find arm_gazebo)/calibration/robot_calibration.yaml"/>
 
-  <param name="robot_description" command="$(find xacro)/xacro '$(find husky_ur5)/urdf/husky_ur5.urdf.xacro'
+  <param name="robot_description" command="$(find xacro)/xacro '$(find husky_ur5)/urdf/husky_ur5_contact.urdf.xacro'
     robot_namespace:=$(arg robot_namespace)
     transmission_hw_interface:=$(arg transmission_hw_interface)
     kinematics_config:=$(arg kinematics_config)" />
