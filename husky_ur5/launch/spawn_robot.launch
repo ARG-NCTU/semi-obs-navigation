@@ -5,15 +5,15 @@
   <arg name="robot_namespace" default="robot"/>
   <arg name="debug" default="false"/>
 
-  <arg name="x" default="-5 "/>
-  <arg name="y" default="1.2"/>
+  <arg name="x" default="7"/>
+  <arg name="y" default="8"/>
   <arg name="z" default="0.3"/>
-  <arg name="yaw" default="0.0"/>
+  <arg name="yaw" default="2"/>
 
   <!-- Optionally disable teleop control -->
   <arg name="joystick" default="true" />
 
-  <node pkg="tf" type="static_transform_publisher" name="fake_tcp_publisher" 
+  <node pkg="tf" type="static_transform_publisher" name="fake_tcp_publisher"
     args="0.18 0.0 0.0 0.0 0.0 0.0 ur5/ee_link ur5/object_link 100"/>
 
   <group ns="$(arg robot_namespace)">
@@ -21,12 +21,12 @@
     <include file="$(find husky_ur5)/launch/robot_control.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)" />
     </include>
-  
+
     <include file="$(find husky_control)/launch/teleop.launch">
         <arg name="joystick" value="$(arg joystick)" />
     </include>
     <!-- Spawn robot in gazebo -->
-    <node name="spawn_robot_model" pkg="gazebo_ros" type="spawn_model" 
+    <node name="spawn_robot_model" pkg="gazebo_ros" type="spawn_model"
         args="-x $(arg x)
               -y $(arg y)
               -z $(arg z)
@@ -47,7 +47,7 @@
 
   <!-- UR5 endeffector control -->
   <node pkg="ur5_bringup" type="ur5_control.py" name="ur5_control_node" output="screen"/>
-  
+
   <!-- <include file="$(find arm_gazebo)/launch/move_group.launch">
     <arg name="debug" default="$(arg debug)" />
   </include>
