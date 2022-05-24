@@ -355,37 +355,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <origin xyz="0.46 0.11 0.48" rpy="0.0 0.0 0.0" />
   </joint>
 
-<<<<<<< HEAD
-  <!-- <link name="bumper_stick_link">
-      <inertial>
-          <origin rpy="0 0 0" xyz="0 0 0"/>
-          <mass value="0.0000000000001"/>
-          <inertia ixx="0.00000001" ixy="0.00000001" ixz="0.00000001" iyy="0.00000001" iyz="0.00000001" izz="0.00000001"/>
-      </inertial>
-      <visual>
-          <origin rpy="0 0 0" xyz="0.035 0 0"/>
-          <geometry>
-              <box size="0.005 0.09 0.03"/>
-          </geometry>
-          <material name="red">
-              <color rgba="1.0 0.0 0.0 1.0"/>
-          </material>
-      </visual>
-      <collision name="stick_move_link_fixed_joint_lump__/bumper_stick_link">
-          <origin rpy="0 0 0" xyz="0.035 0 0"/>
-          <geometry>
-              <box size="0.005 0.09 0.03"/>
-          </geometry>
-      </collision>
-    </link>
-    <joint name="bumper_stick_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
-        <parent link="stick_move_link" />
-        <child link="bumper_stick_link" />
-    </joint> -->
-
-=======
->>>>>>> upstream/main
     <gazebo reference="stick_move_link">
       <sensor name='contactsensor_sensor' type='contact'>
         <always_on>true</always_on>
